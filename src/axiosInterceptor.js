@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'ictak-internship-portal-server-alpha.vercel.app',
 });
 
 axiosInstance.interceptors.request.use(
