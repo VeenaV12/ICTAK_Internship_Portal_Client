@@ -21,7 +21,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('ictak-internship-portal-server-alpha.vercel.app/login', formData);
+      const res = await axios.post('/login', formData);
       localStorage.setItem('token',res.data.token)
       alert('Login successful!'); 
       navigate(res.data.dashboard); 
