@@ -75,7 +75,7 @@ const Reference = () => {
     const fetchReferenceData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('https://ictak-internship-portal-server-alpha.vercel.app/getrefs', {
+        const response = await axios.get('https://ictak-internship-portal-server-alpha.vercel.app/api/references/getrefs', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

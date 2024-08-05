@@ -23,7 +23,7 @@ const Wsubmitlink8 = () => {
     const fetchSubmissionData = async () => {
       const token = localStorage.getItem('token');
       try {
-        const response = await axiosInstance.post('https://ictak-internship-portal-server-alpha.vercel.app/getsubmissiondata', {}, {
+        const response = await axiosInstance.post('https://ictak-internship-portal-server-alpha.vercel.app/api/submissions/getsubmissiondata', {}, {
           headers: {
             Authorization: `Bearer ${token}`
           } 

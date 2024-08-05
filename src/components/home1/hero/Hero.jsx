@@ -13,7 +13,7 @@ const Hero = () => {
   const fetchProject = async () => {
     try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('https://ictak-internship-portal-server-alpha.vercel.app/getproject', {
+        const response = await axios.get('https://ictak-internship-portal-server-alpha.vercel.app/api/projects/getproject', {
             headers: {
                 Authorization: `Bearer ${token}`
             }

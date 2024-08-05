@@ -24,7 +24,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('https://ictak-internship-portal-server-alpha.vercel.app/signup', formData);
+      const res = await axios.post('https://ictak-internship-portal-server-alpha.vercel.app/api/auth/signup', formData);
       alert(res.data.message);
       navigate('/login'); // Redirect to login page after successful signup
     } catch (error) {
