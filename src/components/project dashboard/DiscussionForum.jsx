@@ -19,7 +19,7 @@ export default function DiscussionForum() {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    axios.get('http://localhost:3000/getid', {
+    axios.get('https://ictak-internship-portal-server-alpha.vercel.app/getid', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -38,7 +38,7 @@ export default function DiscussionForum() {
 
   const fetchPosts = () => {
     const token = localStorage.getItem('token');
-    axios.get('http://localhost:3000/getpost', {
+    axios.get('https://ictak-internship-portal-server-alpha.vercel.app/getpost', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -69,7 +69,7 @@ export default function DiscussionForum() {
   const handleNewPostSubmit = () => {
     if (editingPostId) {
       // Update existing post
-      axios.put(`http://localhost:3000/updatepost/${editingPostId}`, {
+      axios.put(`https://ictak-internship-portal-server-alpha.vercel.app/updatepost/${editingPostId}`, {
         query: editedPostContent
       })
         .then((res) => {
@@ -83,7 +83,7 @@ export default function DiscussionForum() {
         });
     } else {
       // Create new post
-      axios.post(`http://localhost:3000/postquery/${loggedInStudentId}`, {
+      axios.post(`https://ictak-internship-portal-server-alpha.vercel.app/postquery/${loggedInStudentId}`, {
         query: newPost
       })
         .then((res) => {
@@ -106,7 +106,7 @@ export default function DiscussionForum() {
     const token = localStorage.getItem('token');
     const commentToSend = newComment;
     
-    axios.post(`http://localhost:3000/postreply/${postId}`, {
+    axios.post(`https://ictak-internship-portal-server-alpha.vercel.app/postreply/${postId}`, {
       reply: commentToSend
     }, {
       headers: {
@@ -133,7 +133,7 @@ export default function DiscussionForum() {
   };
 
   const handleEditPostSubmit = (post) => {
-    axios.patch(`http://localhost:3000/updatepost/${post._id}`, {
+    axios.patch(`https://ictak-internship-portal-server-alpha.vercel.app/updatepost/${post._id}`, {
       query: editedPostContent
     })
       .then((res) => {
@@ -159,7 +159,7 @@ export default function DiscussionForum() {
 
   const handleDeletePost = () => {
     if (postToDelete) {
-      axios.delete(`http://localhost:3000/deletepost/${postToDelete._id}`)
+      axios.delete(`https://ictak-internship-portal-server-alpha.vercel.app/deletepost/${postToDelete._id}`)
         .then((res) => {
           console.log('Post deleted successfully:', res.data);
           fetchPosts(); // Refresh posts after deletion

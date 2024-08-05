@@ -34,7 +34,7 @@ const ProjectTopiclist = () => {
     const handleConfirmSelection = async () => {
         try {
             const token = localStorage.getItem('token');
-                const response = await axios.post('http://localhost:3000/selectproject', {
+                const response = await axios.post('https://ictak-internship-portal-server-alpha.vercel.app/selectproject', {
                     selectedProjectId: selectedProjectId},
                    { headers: {
                         Authorization: `Bearer ${token}`
@@ -58,7 +58,7 @@ const ProjectTopiclist = () => {
         const fetchProjects = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get('http://localhost:3000/displayproject', {
+                const response = await axios.get('https://ictak-internship-portal-server-alpha.vercel.app/displayproject', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }

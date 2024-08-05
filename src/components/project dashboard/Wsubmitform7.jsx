@@ -60,7 +60,7 @@ const Wsubmitform7 = () => {
         // student: loggedInStudentId
       };
 
-      const res = await axiosInstance.post('http://localhost:3000/addsubmissiondata', payload, {
+      const res = await axiosInstance.post('https://ictak-internship-portal-server-alpha.vercel.app/addsubmissiondata', payload, {
         headers: {
           Authorization: `Bearer ${token}`
         }

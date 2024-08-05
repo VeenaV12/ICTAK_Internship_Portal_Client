@@ -14,7 +14,7 @@ const ProjectDescription = () => {
     useEffect(() => {
         const fetchProject = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/displayproject/${projectId}`);
+                const response = await axios.get(`https://ictak-internship-portal-server-alpha.vercel.app/displayproject/${projectId}`);
                 console.log(response.data)
                 setProject(response.data);
             } catch (error) {

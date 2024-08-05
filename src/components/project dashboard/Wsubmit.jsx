@@ -66,7 +66,7 @@ const Wsubmit = () => {
   useEffect(() => {
     const fetchSubmissionData = () => {
       const token = localStorage.getItem('token');
-      axiosInstance.get('http://localhost:3000/wsubmitdata', {
+      axiosInstance.get('https://ictak-internship-portal-server-alpha.vercel.app/wsubmitdata', {
         headers: {
           Authorization: `Bearer ${token}`
         }
