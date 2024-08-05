@@ -18,6 +18,7 @@ const Hero = () => {
                 Authorization: `Bearer ${token}`
             }
         });
+        console.log(response.data.pdf)
         setPdfLink(response.data.pdf); 
     } catch (error) {
         console.error('Error fetching project data:', error);
