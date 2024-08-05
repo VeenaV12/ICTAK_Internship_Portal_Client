@@ -133,7 +133,7 @@ export default function DiscussionForum() {
   };
 
   const handleEditPostSubmit = (post) => {
-    axios.patch(`https://ictak-internship-portal-server-alpha.vercel.app/updatepost/${post._id}`, {
+    axios.put(`https://ictak-internship-portal-server-alpha.vercel.app/updatepost/${post._id}`, {
       query: editedPostContent
     })
       .then((res) => {
