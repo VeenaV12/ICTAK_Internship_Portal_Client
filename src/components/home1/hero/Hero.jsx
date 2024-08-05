@@ -30,7 +30,7 @@ const downloadPDF = async (pdfLink) => {
   try {
       const response = await axios.get(`https://ictak-internship-portal-server-alpha.vercel.app${pdfLink}`,{
         responseType:'blob',
-        credentials: 'omit',  
+        withCredentials: true  
       })
 
       const blob = new Blob([response.data], { type: 'application/pdf' });
