@@ -5,6 +5,7 @@ import "./Hero.css";
 
 const Hero = () => {
   const [pdfLink, setPdfLink] = useState(null);
+  const [projectName, setProjectName] = useState("")
 
   useEffect(() => {
     fetchProject();
@@ -19,7 +20,8 @@ const Hero = () => {
             }
         });
         console.log(response.data.pdf)
-        setPdfLink(response.data.pdf); 
+        setPdfLink(response.data.pdf)
+        setProjectName(response.data.projectName)
     } catch (error) {
         console.error('Error fetching project data:', error);
     }
@@ -61,7 +63,7 @@ const handleDownload = () => {
       <section className='hero'>
         <div className='container'>
           <div className='row'>
-            <Heading subtitle='WELCOME TO ICTAK' title='Project Dashboard' />
+          <Heading title={`WELCOME TO ${projectName.toUpperCase()}`} subtitle='Project Dashboard' />
             <p>ICT Academy of Kerala (ICTAK) is a social enterprise officially launched on the 24th of June, 2014.</p>
             <div className='button'>
               <button className='primary-btn' onClick={handleDownload}>
