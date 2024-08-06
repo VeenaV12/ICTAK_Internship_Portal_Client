@@ -63,7 +63,7 @@ const handleDownload = () => {
       <section className='hero'>
         <div className='container'>
           <div className='row'>
-          <Heading title={`WELCOME TO ${projectName.toUpperCase()}`} subtitle='Project Dashboard' />
+          <Heading title={`${projectName.toUpperCase()}`} subtitle='Welcome to Project Dashboard' />
             <p>ICT Academy of Kerala (ICTAK) is a social enterprise officially launched on the 24th of June, 2014.</p>
             <div className='button'>
               <button className='primary-btn' onClick={handleDownload}>
